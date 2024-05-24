@@ -4,6 +4,7 @@
 
 from fuzzywuzzy import fuzz
 
+
 input_name = input("Enter the input car name and model:")
 
 database_names = ["ford_aspire",
@@ -55,10 +56,7 @@ for names in database_names:
     if(fuzz.ratio(names.replace('_',' ').upper(), input_name.replace('-',' ').upper())>max_percentage):
         max_percentage = fuzz.ratio(names.replace('_',' ').upper(), input_name.replace('-',' ').upper())
         output_name    = names
-        if(max_percentage=0):
+        if(max_percentage==0):
             output_name = "no match found"
 print("Car Name :",output_name)
 print("Matching % in database: ", max_percentage)
-
-
-
